@@ -1,0 +1,11 @@
+# Airflow logs
+**/logs/
+**/Airflow/logs/
+ejercicio_adicional/Airflow/logs/
+
+# Airflow runtime
+**/__pycache__/
+*.pyc
+
+# Local data
+data/
