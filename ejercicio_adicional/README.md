@@ -6,7 +6,7 @@ Genera un nuevo DAG utilizando la información (dataset) disponible a tu elecci�
 
 ## Arquitectura
 
-- **Airflow**: orquestación del DAG `etl_engineer_challenge`.
+- **Airflow**: orquestación del DAG.
 - **MinIO**: almacenamiento tipo S3 para el Data Lake.
 - **Trino**: motor SQL para consultar el archivo Parquet.
 - **Hive Metastore**: catálogo de metadatos usado por Trino.
