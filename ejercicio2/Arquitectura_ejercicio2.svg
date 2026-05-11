@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+  <defs>
+    <style>
+      .bg{fill:#f7f9fc}.card{fill:#fff;stroke:#d8dee9;stroke-width:2;rx:18}.title{font:700 34px Arial;fill:#1f2937}.subtitle{font:500 18px Arial;fill:#4b5563}.label{font:700 20px Arial;fill:#111827}.small{font:500 15px Arial;fill:#374151}.tiny{font:500 13px Arial;fill:#4b5563}.arrow{stroke:#374151;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke:#64748b;stroke-width:2;stroke-dasharray:7 7;fill:none}.layer{fill:#eef6ff;stroke:#93c5fd;stroke-width:2;rx:18}.gold{fill:#fff7ed;stroke:#fdba74;stroke-width:2;rx:18}.green{fill:#ecfdf5;stroke:#86efac;stroke-width:2;rx:18}.purple{fill:#f5f3ff;stroke:#c4b5fd;stroke-width:2;rx:18}.logoText{font:700 14px Arial;fill:#111827}.white{fill:white}.muted{fill:#6b7280}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#374151"/></marker>
+    <linearGradient id="minioGrad" x1="0" x2="1"><stop offset="0" stop-color="#ef4444"/><stop offset="1" stop-color="#991b1b"/></linearGradient>
+    <linearGradient id="iceGrad" x1="0" x2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+  </defs>
+
+  <rect class="bg" width="1600" height="1050"/>
+  <text x="800" y="55" text-anchor="middle" class="title">Arquitectura Lakehouse para Consolidación de F1, F2 y F3</text>
+  <text x="800" y="85" text-anchor="middle" class="subtitle">MinIO + Iceberg + Hive Metastore + Trino + Airflow + PySpark/Polars/Pandas</text>
+
+  <!-- Sources -->
+  <rect x="70" y="145" width="300" height="135" class="card"/>
+  <text x="220" y="178" text-anchor="middle" class="label">F1 - CRM propietario</text>
+  <text x="220" y="205" text-anchor="middle" class="small">Clientes, demográficos, contacto</text>
+  <g transform="translate(160,220)">
+    <circle cx="20" cy="20" r="18" fill="#0ea5e9"/><circle cx="60" cy="20" r="18" fill="#22c55e"/><circle cx="100" cy="20" r="18" fill="#f97316"/>
+    <text x="60" y="58" text-anchor="middle" class="logoText">CRM</text>
+  </g>
+
+  <rect x="470" y="145" width="300" height="135" class="card"/>
+  <text x="620" y="178" text-anchor="middle" class="label">F2 - SQL Server</text>
+  <text x="620" y="205" text-anchor="middle" class="small">Transacciones mitad productos</text>
+  <g transform="translate(565,218)">
+    <ellipse cx="55" cy="12" rx="55" ry="12" fill="#dc2626"/>
+    <rect x="0" y="12" width="110" height="45" fill="#ef4444"/>
+    <ellipse cx="55" cy="57" rx="55" ry="12" fill="#b91c1c"/>
+    <text x="55" y="85" text-anchor="middle" class="logoText">SQL Server</text>
+  </g>
+
+  <rect x="870" y="145" width="300" height="135" class="card"/>
+  <text x="1020" y="178" text-anchor="middle" class="label">F3 - PostgreSQL</text>
+  <text x="1020" y="205" text-anchor="middle" class="small">Transacciones resto productos</text>
+  <g transform="translate(960,217)">
+    <circle cx="60" cy="28" r="35" fill="#336791"/>
+    <path d="M40 30 C40 8,80 8,80 30 C80 55,60 62,60 62 C60 62,40 55,40 30 Z" fill="#fff" opacity=".9"/>
+    <circle cx="50" cy="26" r="4" fill="#336791"/><circle cx="70" cy="26" r="4" fill="#336791"/>
+    <path d="M60 34 C58 50,72 52,76 42" stroke="#336791" stroke-width="5" fill="none"/>
+    <text x="60" y="88" text-anchor="middle" class="logoText">PostgreSQL</text>
+  </g>
+
+  <!-- Airflow -->
+  <rect x="1240" y="145" width="280" height="135" class="purple"/>
+  <text x="1380" y="178" text-anchor="middle" class="label">Airflow</text>
+  <text x="1380" y="205" text-anchor="middle" class="small">Orquestación diaria</text>
+  <g transform="translate(1335,220)">
+    <circle cx="45" cy="25" r="7" fill="#111827"/>
+    <path d="M45 25 C30 5,20 10,20 25 C20 40,32 40,45 25" fill="#017cee"/>
+    <path d="M45 25 C60 5,70 10,70 25 C70 40,58 40,45 25" fill="#00ad46"/>
+    <path d="M45 25 C25 40,30 55,45 55 C60 55,60 42,45 25" fill="#ffbc00"/>
+    <path d="M45 25 C65 40,60 55,45 55 C30 55,30 42,45 25" fill="#ff5a5f" opacity=".9"/>
+    <text x="45" y="83" text-anchor="middle" class="logoText">Apache Airflow</text>
+  </g>
+
+  <!-- Arrows to airflow -->
+  <path d="M370 212 H1240" class="arrow"/>
+  <path d="M770 212 H1240" class="arrow"/>
+  <path d="M1170 212 H1240" class="arrow"/>
+
+  <!-- Ingestion -->
+  <rect x="190" y="350" width="1220" height="90" class="card"/>
+  <text x="800" y="383" text-anchor="middle" class="label">Ingesta incremental / CDC</text>
+  <text x="800" y="413" text-anchor="middle" class="small">F1: API/archivos incremental · F2: SQL Server CDC · F3: PostgreSQL logical replication</text>
+  <path d="M1380 280 V350" class="arrow"/>
+
+  <!-- Bronze MinIO -->
+  <rect x="130" y="510" width="390" height="145" class="layer"/>
+  <text x="325" y="543" text-anchor="middle" class="label">Bronze Layer</text>
+  <text x="325" y="570" text-anchor="middle" class="small">Datos crudos por fuente</text>
+  <g transform="translate(270,590)">
+    <rect x="0" y="0" width="110" height="45" rx="8" fill="url(#minioGrad)"/>
+    <text x="55" y="30" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="white">MinIO</text>
+    <text x="55" y="70" text-anchor="middle" class="logoText">S3 on-premise</text>
+  </g>
+
+  <!-- Silver Iceberg -->
+  <rect x="605" y="510" width="390" height="145" class="layer"/>
+  <text x="800" y="543" text-anchor="middle" class="label">Silver Layer</text>
+  <text x="800" y="570" text-anchor="middle" class="small">Limpieza, homologación, deduplicación</text>
+  <g transform="translate(745,590)">
+    <polygon points="55,0 105,50 5,50" fill="url(#iceGrad)"/>
+    <polygon points="55,0 75,50 35,50" fill="#e0f2fe" opacity=".8"/>
+    <text x="55" y="78" text-anchor="middle" class="logoText">Apache Iceberg</text>
+  </g>
+
+  <!-- Gold Iceberg -->
+  <rect x="1080" y="510" width="390" height="145" class="gold"/>
+  <text x="1275" y="543" text-anchor="middle" class="label">Gold Layer</text>
+  <text x="1275" y="570" text-anchor="middle" class="small">Tablas finales y datasets analíticos</text>
+  <g transform="translate(1220,590)">
+    <polygon points="55,0 105,50 5,50" fill="url(#iceGrad)"/>
+    <polygon points="55,0 75,50 35,50" fill="#e0f2fe" opacity=".8"/>
+    <text x="55" y="78" text-anchor="middle" class="logoText">Iceberg Tables</text>
+  </g>
+
+  <path d="M800 440 V485 H325 V510" class="arrow"/>
+  <path d="M520 582 H605" class="arrow"/>
+  <path d="M995 582 H1080" class="arrow"/>
+
+  <!-- Processing tools -->
+  <rect x="450" y="705" width="700" height="95" class="green"/>
+  <text x="800" y="735" text-anchor="middle" class="label">Transformación</text>
+  <text x="800" y="763" text-anchor="middle" class="small">PySpark para alto volumen · Polars para volumen medio · Pandas para análisis pequeño</text>
+  <g transform="translate(585,775)"><circle cx="0" cy="0" r="12" fill="#f97316"/><text x="26" y="5" class="logoText">PySpark</text></g>
+  <g transform="translate(760,775)"><rect x="-12" y="-12" width="24" height="24" rx="5" fill="#2563eb"/><text x="25" y="5" class="logoText">Polars</text></g>
+  <g transform="translate(930,775)"><rect x="-12" y="-12" width="24" height="24" rx="5" fill="#150458"/><text x="25" y="5" class="logoText">Pandas</text></g>
+  <path d="M800 655 V705" class="dash"/>
+  <path d="M1275 655 V705 H800" class="dash"/>
+
+  <!-- Hive metastore -->
+  <rect x="80" y="720" width="285" height="100" class="card"/>
+  <text x="222" y="750" text-anchor="middle" class="label">Hive Metastore</text>
+  <text x="222" y="777" text-anchor="middle" class="small">Catálogo de tablas</text>
+  <g transform="translate(185,790)">
+    <polygon points="37,0 72,20 72,60 37,80 2,60 2,20" fill="#f59e0b"/>
+    <text x="37" y="48" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700" fill="white">Hive</text>
+  </g>
+  <path d="M365 770 H450" class="dash"/>
+
+  <!-- Consumers -->
+  <rect x="185" y="875" width="500" height="120" class="card"/>
+  <text x="435" y="908" text-anchor="middle" class="label">Usuarios operativos</text>
+  <text x="435" y="934" text-anchor="middle" class="small">Consultas SQL sobre tablas Gold</text>
+  <g transform="translate(385,945)">
+    <ellipse cx="50" cy="20" rx="55" ry="22" fill="#dd0031"/>
+    <text x="50" y="27" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="white">Trino</text>
+  </g>
+
+  <rect x="915" y="875" width="500" height="120" class="card"/>
+  <text x="1165" y="908" text-anchor="middle" class="label">Ciencia de datos</text>
+  <text x="1165" y="934" text-anchor="middle" class="small">Clustering, features, grafos y patrones</text>
+  <g transform="translate(1080,950)">
+    <circle cx="0" cy="0" r="14" fill="#f97316"/><text x="25" y="5" class="logoText">PySpark</text>
+    <rect x="145" y="-14" width="28" height="28" rx="6" fill="#2563eb"/><text x="185" y="5" class="logoText">Polars</text>
+  </g>
+
+  <path d="M1275 655 V830 H435 V875" class="arrow"/>
+  <path d="M1275 655 V830 H1165 V875" class="arrow"/>
+
+  <!-- Footer notes -->
+  <text x="800" y="1025" text-anchor="middle" class="tiny">Capas: Bronze conserva crudo · Silver estandariza · Gold publica tablas SQL y datasets para ciencia de datos</text>
+</svg>
